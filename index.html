@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minds of the Middle Ages</title>
+<meta name="description" content="Portraits, translations and concordances of the thinkers who carried learning from late antiquity into the medieval world.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans+Condensed:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: a glossed manuscript page. Narrow lemma column (the name) beside a wide commentary column (the portrait). Lapis for structure, vermilion for rubrics only. */
+:root{
+  --paper:#eef0ee; --ink:#1f2326; --muted:#5d6468; --lapis:#23468f; --rubric:#b23a1e;
+  --rule:#c9cfcd; --panel:#f7f8f6;
+  --display:"Cormorant SC","Cormorant Garamond",Georgia,serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --label:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{--paper:#15191c;--ink:#e3e6e3;--muted:#9aa3a6;--lapis:#8eaaf0;--rubric:#ec8a6c;--rule:#2e3539;--panel:#1c2124;color-scheme:dark}
+}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+a{color:var(--lapis);text-underline-offset:2px}
+a:focus-visible{outline:2px solid var(--lapis);outline-offset:2px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 72px}
+header{padding:56px 0 28px;border-bottom:3px double var(--rule);display:grid;gap:12px}
+.kicker{font-family:var(--label);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--rubric)}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.15;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.4rem,6vw,3.8rem);color:var(--lapis)}
+h2{font-size:1.8rem;color:var(--lapis)}
+h3{font-size:1.25rem;color:var(--lapis)}
+p{margin:0;max-width:65ch}
+.lede{font-size:1.15rem;color:var(--muted)}
+section{padding:40px 0 0;display:grid;gap:18px}
+.minds{display:grid;border:1px solid var(--rule);background:var(--panel)}
+.mind{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);border-bottom:1px solid var(--rule)}
+.mind:last-child{border-bottom:0}
+.mind .name{padding:14px 16px;border-right:1px solid var(--rule);font-family:var(--display);font-size:1.2rem;display:grid;align-content:start;gap:2px}
+.mind .name b{color:var(--rubric);font-weight:600}
+.mind .name span{font-family:var(--label);font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.mind .gloss{padding:14px 16px;font-size:.98rem}
+@media (max-width:620px){.mind{grid-template-columns:1fr}.mind .name{border-right:0;border-bottom:1px dotted var(--rule)}}
+.works{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.work{border:1px solid var(--rule);background:var(--panel);padding:16px 18px;display:grid;gap:8px;align-content:start}
+.pill{justify-self:start;font-family:var(--label);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border:1px solid currentColor;border-radius:999px}
+.pill.live{color:var(--lapis)}
+.pill.soon{color:var(--rubric)}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);font-family:var(--label);font-size:.85rem;color:var(--muted);display:grid;gap:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Late antiquity to the twelfth century</div>
+  <h1>Minds of the Middle Ages</h1>
+  <p class="lede">The people who carried learning across the end of the ancient world: who compressed it, copied it, argued with it and explained it to their students. Portraits, translations and concordances, made with AI and labeled as such.</p>
+</header>
+
+<section aria-labelledby="minds-h">
+  <h2 id="minds-h">The minds</h2>
+  <p>Each name gets its own page in time. For now, one gloss apiece.</p>
+  <div class="minds">
+    <div class="mind"><div class="name"><b>Martianus Capella</b><span>5th century</span></div><div class="gloss">A North African who turned the liberal arts into a wedding: seven bridesmaids, each delivering a lecture. Strange, ornate and copied for a thousand years.</div></div>
+    <div class="mind"><div class="name"><b>Boethius</b><span>c. 477 – 524</span></div><div class="gloss">Translated Greek logic and mathematics into Latin, named the four mathematical arts the <i>quadruvium</i>, and wrote the <i>Consolation of Philosophy</i> in prison before his execution.</div></div>
+    <div class="mind"><div class="name"><b>Cassiodorus</b><span>c. 485 – c. 585</span></div><div class="gloss">A statesman of the Gothic court whose official letters are monuments of ornate Latin. In retirement he founded Vivarium and made the copying of books a monastic duty.</div></div>
+    <div class="mind"><div class="name"><b>Isidore of Seville</b><span>c. 560 – 636</span></div><div class="gloss">Compressed the knowledge of antiquity into the <i>Etymologiae</i>, explaining everything through the origins of words. The medieval reference book.</div></div>
+    <div class="mind"><div class="name"><b>Alcuin of York</b><span>c. 735 – 804</span></div><div class="gloss">Charlemagne's schoolmaster. Taught grammar, rhetoric and dialectic as dialogues between master and pupil.</div></div>
+    <div class="mind"><div class="name"><b>John Scottus Eriugena</b><span>c. 800 – c. 877</span></div><div class="gloss">An Irish philosopher at the court of Charles the Bald, rare in the West for reading Greek. Wrote notes on Martianus that later teachers built on.</div></div>
+    <div class="mind"><div class="name"><b>Remigius of Auxerre</b><span>c. 841 – 908</span></div><div class="gloss">A schoolmaster who compiled commentaries on some twenty texts. For three centuries, readers met Martianus with Remigius's notes in the margin.</div></div>
+    <div class="mind"><div class="name"><b>Hugh of St Victor</b><span>c. 1096 – 1141</span></div><div class="gloss">Rebuilt the map of knowledge in the <i>Didascalicon</i>, adding mechanical arts beside the liberal ones.</div></div>
+    <div class="mind"><div class="name"><b>Herrad of Landsberg</b><span>c. 1130 – 1195</span></div><div class="gloss">An abbess who compiled the <i>Hortus deliciarum</i> for her nuns, including a famous drawing of Philosophy enthroned among the seven arts.</div></div>
+  </div>
+</section>
+
+<section aria-labelledby="works-h">
+  <h2 id="works-h">Works</h2>
+  <div class="works">
+    <div class="work">
+      <span class="pill live">Live</span>
+      <h3>Etymologiae, reimagined</h3>
+      <p>All twenty books of Isidore recast as verse chapters by guilds of AI models. A reimagining, not a translation.</p>
+      <p><a href="https://spinchange.com/etymologiae/">Read the Etymologiae</a></p>
+    </div>
+    <div class="work">
+      <span class="pill soon">In progress</span>
+      <h3>The Marriage of Philology and Mercury</h3>
+      <p>A new English translation of Martianus Capella, book by book.</p>
+    </div>
+    <div class="work">
+      <span class="pill soon">Planned</span>
+      <h3>Wisdom's House</h3>
+      <p>A concordance of the seven liberal arts: how each art was defined and taught from Martianus to Hugh of St Victor, sentence by sentence, with what each writer kept, cut or changed.</p>
+    </div>
+    <div class="work">
+      <span class="pill soon">Planned</span>
+      <h3>The glossed Martianus</h3>
+      <p>Martianus in one column, Remigius of Auxerre's commentary in the other, as a ninth-century student would have read it.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Translations and texts on this site are made with AI models (Claude and others) under human direction, and are labeled as such.</span>
+  <span>Part of <a href="https://spinchange.com/">spinchange.com</a>.</span>
+</footer>
+
+</div>
+</body>
+</html>
