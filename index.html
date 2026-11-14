@@ -7,84 +7,192 @@
 <meta name="description" content="Portraits, translations and concordances of the thinkers who carried learning from late antiquity into the medieval world.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans+Condensed:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=IM+Fell+DW+Pica+SC&family=IM+Fell+Great+Primer+SC&display=swap" rel="stylesheet">
 <style>
-/* Layout: a glossed manuscript page. Narrow lemma column (the name) beside a wide commentary column (the portrait). Lapis for structure, vermilion for rubrics only. */
+/* Layout: a centered leaf of a university manuscript. Aged parchment, red ruling, blackletter rubrics, Fell-type body, red-and-blue lombard initials. One visual world, single theme by choice. */
 :root{
-  --paper:#eef0ee; --ink:#1f2326; --muted:#5d6468; --lapis:#23468f; --rubric:#b23a1e;
-  --rule:#c9cfcd; --panel:#f7f8f6;
-  --display:"Cormorant SC","Cormorant Garamond",Georgia,serif;
-  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
-  --label:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
+  --vellum:#e8d9b5;
+  --ink:#3a2817;          /* iron-gall brown */
+  --faded:#6e5636;
+  --rubric:#9e2a17;       /* vermilion */
+  --lapis:#1f3f7a;        /* ultramarine */
+  --gilt:#a8843c;
+  --ruling:rgba(158,42,23,.28);
+  --display:"UnifrakturMaguntia","Old English Text MT",serif;   /* initial letter and Explicit only */
+  --heading:"IM Fell Great Primer SC","IM Fell English SC",Garamond,Georgia,serif;
+  --body:"IM Fell English",Garamond,Georgia,serif;
+  --caps:"IM Fell English SC","IM Fell DW Pica SC",Garamond,Georgia,serif;
   color-scheme:light;
 }
-@media (prefers-color-scheme: dark){
-  :root{--paper:#15191c;--ink:#e3e6e3;--muted:#9aa3a6;--lapis:#8eaaf0;--rubric:#ec8a6c;--rule:#2e3539;--panel:#1c2124;color-scheme:dark}
-}
 *{box-sizing:border-box}
-html{background:var(--paper)}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
-a{color:var(--lapis);text-underline-offset:2px}
-a:focus-visible{outline:2px solid var(--lapis);outline-offset:2px}
-.wrap{max-width:1000px;margin:0 auto;padding:0 20px 72px}
-header{padding:56px 0 28px;border-bottom:3px double var(--rule);display:grid;gap:12px}
-.kicker{font-family:var(--label);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--rubric)}
-h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.15;margin:0;text-wrap:balance}
-h1{font-size:clamp(2.4rem,6vw,3.8rem);color:var(--lapis)}
-h2{font-size:1.8rem;color:var(--lapis)}
-h3{font-size:1.25rem;color:var(--lapis)}
-p{margin:0;max-width:65ch}
-.lede{font-size:1.15rem;color:var(--muted)}
-section{padding:40px 0 0;display:grid;gap:18px}
-.minds{display:grid;border:1px solid var(--rule);background:var(--panel)}
-.mind{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);border-bottom:1px solid var(--rule)}
-.mind:last-child{border-bottom:0}
-.mind .name{padding:14px 16px;border-right:1px solid var(--rule);font-family:var(--display);font-size:1.2rem;display:grid;align-content:start;gap:2px}
-.mind .name b{color:var(--rubric);font-weight:600}
-.mind .name span{font-family:var(--label);font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
-.mind .gloss{padding:14px 16px;font-size:.98rem}
-@media (max-width:620px){.mind{grid-template-columns:1fr}.mind .name{border-right:0;border-bottom:1px dotted var(--rule)}}
-.works{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-.work{border:1px solid var(--rule);background:var(--panel);padding:16px 18px;display:grid;gap:8px;align-content:start}
-.pill{justify-self:start;font-family:var(--label);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border:1px solid currentColor;border-radius:999px}
+html{background:#2b2015}
+body{
+  margin:0;color:var(--ink);font-family:var(--body);font-size:1.12rem;line-height:1.62;text-align:center;
+  background-color:var(--vellum);
+  background-image:
+    radial-gradient(ellipse at 50% 40%, rgba(255,248,225,.55) 0%, rgba(255,248,225,0) 60%),
+    radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 55%, rgba(92,58,22,.42) 100%),
+    radial-gradient(circle at 12% 18%, rgba(140,96,40,.16) 0 6%, transparent 9%),
+    radial-gradient(circle at 86% 64%, rgba(140,96,40,.13) 0 5%, transparent 8%),
+    radial-gradient(circle at 70% 8%, rgba(140,96,40,.10) 0 3%, transparent 5%),
+    radial-gradient(circle at 22% 82%, rgba(120,80,30,.12) 0 4%, transparent 7%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .24  0 0 0 0 .1  0 0 0 .22 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment:fixed,fixed,scroll,scroll,scroll,scroll,scroll;
+}
+a{color:var(--lapis);text-decoration-color:rgba(31,63,122,.45);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--rubric);outline-offset:2px}
+a.hand::before{content:"☞ ";color:var(--rubric);text-decoration:none;display:inline-block}
+.wrap{
+  max-width:960px;margin:0 auto;padding:0 56px 72px;position:relative;
+  background:
+    linear-gradient(var(--ruling),var(--ruling)) 28px 0/1px 100% no-repeat,
+    linear-gradient(var(--ruling),var(--ruling)) 34px 0/1px 100% no-repeat,
+    linear-gradient(var(--ruling),var(--ruling)) calc(100% - 28px) 0/1px 100% no-repeat,
+    linear-gradient(var(--ruling),var(--ruling)) calc(100% - 34px) 0/1px 100% no-repeat;
+}
+@media (max-width:640px){.wrap{padding:0 22px 56px;background:none}}
+header{padding:64px 0 28px;display:grid;gap:14px;justify-items:center}
+.kicker{font-family:var(--caps);font-size:1rem;letter-spacing:.12em;color:var(--rubric)}
+h1,h2,h3{font-weight:400;line-height:1.1;margin:0;text-wrap:balance}
+h1{font-family:var(--heading);font-size:clamp(2.4rem,6.4vw,4.1rem);letter-spacing:.02em;color:var(--rubric);text-shadow:0 1px 0 rgba(255,240,210,.5)}
+h2{font-family:var(--heading);font-size:2.05rem;letter-spacing:.02em;color:var(--rubric)}
+h3{font-family:var(--caps);font-size:1.3rem;color:var(--lapis);letter-spacing:.03em}
+.latin{display:block;font-family:var(--caps);font-size:.95rem;letter-spacing:.14em;color:var(--faded);margin-bottom:4px}
+p{margin:0 auto;max-width:60ch}
+.lede{font-size:1.2rem;text-align:left;max-width:56ch}
+.lede::first-letter{
+  float:left;font-family:var(--display);font-size:4.4rem;line-height:.8;padding:8px 10px 4px 8px;margin:4px 12px 0 0;
+  color:var(--lapis);border:1.5px solid var(--rubric);outline:1px solid var(--rubric);outline-offset:3px;background:rgba(255,246,220,.45)
+}
+.fleuron{color:var(--rubric);font-size:1.4rem;letter-spacing:.6em;padding-left:.6em}
+section{padding:44px 0 0;display:grid;gap:18px;justify-items:center}
+section > *{width:100%}
+.rule{height:9px;max-width:520px;margin:0 auto;border-top:1px solid var(--rubric);border-bottom:1px solid var(--rubric);opacity:.55}
+
+.minds{display:grid}
+.mind{display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;align-items:center;padding:24px 8px;border-bottom:1px solid rgba(110,86,54,.3)}
+.mind:first-child{border-top:1px solid rgba(110,86,54,.3)}
+.mind figure{margin:0;display:grid;gap:6px;justify-items:center}
+.mind img{
+  width:150px;height:188px;object-fit:cover;display:block;
+  border:2px solid var(--gilt);outline:1px solid var(--rubric);outline-offset:4px;
+  filter:sepia(.18) contrast(.96) saturate(.92);box-shadow:0 2px 8px rgba(60,35,10,.25)
+}
+.mind .name{font-family:var(--caps);font-size:1.3rem;color:var(--rubric);line-height:1.1;margin-top:10px}
+.mind .dates{font-family:var(--body);font-style:italic;font-size:.95rem;color:var(--faded)}
+.mind .gloss p{max-width:52ch}
+.mind .gloss p::before{content:"¶ ";color:var(--rubric)}
+.mind figcaption{font-style:italic;font-size:.82rem;line-height:1.35;color:var(--faded);max-width:26ch;margin-top:2px}
+@media (max-width:640px){.mind{grid-template-columns:1fr;gap:14px}}
+
+.works{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.work{
+  padding:20px 18px;display:grid;gap:8px;align-content:start;justify-items:center;
+  border:1px solid rgba(110,86,54,.45);outline:1px solid rgba(110,86,54,.25);outline-offset:-6px;
+  background:rgba(255,246,220,.28)
+}
+.pill{font-family:var(--caps);font-size:.9rem;letter-spacing:.1em}
+.pill::before,.pill::after{content:" ❦ ";font-size:.8em}
 .pill.live{color:var(--lapis)}
 .pill.soon{color:var(--rubric)}
-footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);font-family:var(--label);font-size:.85rem;color:var(--muted);display:grid;gap:4px}
+.credits{font-size:.95rem;color:var(--faded);display:grid;gap:4px}
+.credits p{max-width:80ch}
+footer{margin-top:56px;padding-top:18px;font-size:.98rem;color:var(--faded);display:grid;gap:6px}
+footer .explicit{font-family:var(--display);font-size:1.7rem;color:var(--rubric)}
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <header>
-  <div class="kicker">Late antiquity to the twelfth century</div>
+  <div class="kicker">Incipit · Late antiquity to the twelfth century</div>
   <h1>Minds of the Middle Ages</h1>
-  <p class="lede">The people who carried learning across the end of the ancient world: who compressed it, copied it, argued with it and explained it to their students. Portraits, translations and concordances, made with AI and labeled as such.</p>
+  <div class="fleuron" aria-hidden="true">❧ ❧ ❧</div>
+  <p class="lede">The people who carried learning across the end of the ancient world: who compressed it, copied it, argued with it and explained it to their students. Portraits, translations and concordances.</p>
 </header>
 
 <section aria-labelledby="minds-h">
-  <h2 id="minds-h">The minds</h2>
-  <p>Each name gets its own page in time. For now, one gloss apiece.</p>
+  <h2 id="minds-h"><span class="latin">De auctoribus</span>The Minds</h2>
+  <p>Each shown as the Middle Ages drew them. Where no picture of a writer survives, a miniature from a manuscript of their work stands in.</p>
   <div class="minds">
-    <div class="mind"><div class="name"><b>Martianus Capella</b><span>5th century</span></div><div class="gloss">A North African who turned the liberal arts into a wedding: seven bridesmaids, each delivering a lecture. Strange, ornate and copied for a thousand years.</div></div>
-    <div class="mind"><div class="name"><b>Boethius</b><span>c. 477 – 524</span></div><div class="gloss">Translated Greek logic and mathematics into Latin, named the four mathematical arts the <i>quadruvium</i>, and wrote the <i>Consolation of Philosophy</i> in prison before his execution.</div></div>
-    <div class="mind"><div class="name"><b>Cassiodorus</b><span>c. 485 – c. 585</span></div><div class="gloss">A statesman of the Gothic court whose official letters are monuments of ornate Latin. In retirement he founded Vivarium and made the copying of books a monastic duty.</div></div>
-    <div class="mind"><div class="name"><b>Isidore of Seville</b><span>c. 560 – 636</span></div><div class="gloss">Compressed the knowledge of antiquity into the <i>Etymologiae</i>, explaining everything through the origins of words. The medieval reference book.</div></div>
-    <div class="mind"><div class="name"><b>Alcuin of York</b><span>c. 735 – 804</span></div><div class="gloss">Charlemagne's schoolmaster. Taught grammar, rhetoric and dialectic as dialogues between master and pupil.</div></div>
-    <div class="mind"><div class="name"><b>John Scottus Eriugena</b><span>c. 800 – c. 877</span></div><div class="gloss">An Irish philosopher at the court of Charles the Bald, rare in the West for reading Greek. Wrote notes on Martianus that later teachers built on.</div></div>
-    <div class="mind"><div class="name"><b>Remigius of Auxerre</b><span>c. 841 – 908</span></div><div class="gloss">A schoolmaster who compiled commentaries on some twenty texts. For three centuries, readers met Martianus with Remigius's notes in the margin.</div></div>
-    <div class="mind"><div class="name"><b>Hugh of St Victor</b><span>c. 1096 – 1141</span></div><div class="gloss">Rebuilt the map of knowledge in the <i>Didascalicon</i>, adding mechanical arts beside the liberal ones.</div></div>
-    <div class="mind"><div class="name"><b>Herrad of Landsberg</b><span>c. 1130 – 1195</span></div><div class="gloss">An abbess who compiled the <i>Hortus deliciarum</i> for her nuns, including a famous drawing of Philosophy enthroned among the seven arts.</div></div>
+
+    <div class="mind">
+      <figure><img src="img/augustine.jpg" alt="Augustine seated in a white robe, reading an open book" width="150" height="188"><div class="name">Augustine of Hippo</div><div class="dates">354 – 430</div><figcaption>The earliest known portrait. Fresco, Lateran, Rome, 6th century</figcaption></figure>
+      <div class="gloss"><p>Bishop of Hippo in North Africa. Argued that Christians could take what was useful from pagan learning, as the Israelites took the gold of Egypt. Began a set of books on the liberal arts; only the one on music survives.</p></div>
+    </div>
+
+    <div class="mind">
+      <figure><img src="img/martianus.jpg" alt="Music, a crowned woman with a harp, seated on a throne" width="150" height="188"><div class="name">Martianus Capella</div><div class="dates">5th century</div><figcaption>Music, one of his seven arts. Venice, Marciana, Lat. XIV 35</figcaption></figure>
+      <div class="gloss"><p>A North African who turned the liberal arts into a wedding: seven bridesmaids, each delivering a lecture. Strange, ornate and copied for a thousand years.</p></div>
+    </div>
+
+    <div class="mind">
+      <figure><img src="img/boethius.jpg" alt="Lady Philosophy in conversation with Boethius in a room" width="150" height="188"><div class="name">Boethius</div><div class="dates">c. 477 – 524</div><figcaption>With Philosophy. Utrecht, UB, Hs. 1335</figcaption></figure>
+      <div class="gloss"><p>Translated Greek logic and mathematics into Latin, named the four mathematical arts the <i>quadruvium</i>, and wrote the <i>Consolation of Philosophy</i> in prison before his execution.</p></div>
+    </div>
+
+    <div class="mind">
+      <figure><img src="img/cassiodorus.jpg" alt="Cassiodorus, bearded and enthroned, holding an open book, labeled Cassiodorus Senator" width="150" height="188"><div class="name">Cassiodorus</div><div class="dates">c. 485 – c. 585</div><figcaption>"Cassiodorus Senator." Leiden, Vulcanius 46, Fulda, 1176/7</figcaption></figure>
+      <div class="gloss"><p>A statesman of the Gothic court whose official letters are monuments of ornate Latin. In retirement he founded Vivarium and made the copying of books a monastic duty.</p></div>
+    </div>
+
+    <div class="mind">
+      <figure><img src="img/isidore.jpg" alt="Isidore handing a book to his sister Florentina beneath an arch" width="150" height="188"><div class="name">Isidore of Seville</div><div class="dates">c. 560 – 636</div><figcaption>Giving his book to his sister Florentina. BnF lat. 13396, Corbie, c. 800</figcaption></figure>
+      <div class="gloss"><p>Compressed the knowledge of antiquity into the <i>Etymologiae</i>, explaining everything through the origins of words. The medieval reference book.</p></div>
+    </div>
+
+    <div class="mind">
+      <figure><img src="img/bede.jpg" alt="Bede seated at a desk, writing in a book with a pen" width="150" height="188"><div class="name">Bede</div><div class="dates">c. 673 – 735</div><figcaption>Writing. Life of St Cuthbert, BL Yates Thompson 26, 12th century</figcaption></figure>
+      <div class="gloss"><p>A monk of Jarrow in Northumbria who put the arts to work: figures of speech for reading scripture, astronomy for finding the date of Easter. His histories made it common to count years from the birth of Christ.</p></div>
+    </div>
+
+    <div class="mind">
+      <figure><img src="img/alcuin.jpg" alt="Alcuin, labeled Albinus abbas, with his arm around his pupil Rabanus Maurus" width="150" height="188"><div class="name">Alcuin of York</div><div class="dates">c. 735 – 804</div><figcaption>"Albinus abbas," presenting his pupil Rabanus Maurus. Fulda, 9th century</figcaption></figure>
+      <div class="gloss"><p>Charlemagne's schoolmaster. Taught grammar, rhetoric and dialectic as dialogues between master and pupil.</p></div>
+    </div>
+
+    <div class="mind">
+      <figure><img src="img/rabanus.jpg" alt="Rabanus, labeled Rabanus Maurus, embraced by his teacher Alcuin" width="150" height="188"><div class="name">Rabanus Maurus</div><div class="dates">c. 780 – 856</div><figcaption>&ldquo;Rabanus Maurus,&rdquo; presented by his teacher Alcuin. Fulda, 9th century</figcaption></figure>
+      <div class="gloss"><p>Alcuin&rsquo;s pupil, later abbot of Fulda and archbishop of Mainz, remembered as the teacher of Germany. Wrote a handbook for training clergy and an encyclopedia built on Isidore.</p></div>
+    </div>
+
+    <div class="mind">
+      <figure><img src="img/eriugena.jpg" alt="Line drawing of Eriugena with curly hair, labeled Iohannes" width="150" height="188"><div class="name">John Scottus Eriugena</div><div class="dates">c. 800 – c. 877</div><figcaption>"Iohannes." Clavis physicae, BnF lat. 6734, 12th century</figcaption></figure>
+      <div class="gloss"><p>An Irish philosopher at the court of Charles the Bald, rare in the West for reading Greek. Wrote notes on Martianus that later teachers built on.</p></div>
+    </div>
+
+    <div class="mind">
+      <figure><img src="img/remigius.jpg" alt="Grammar seated before tiers of students in an amphitheater" width="150" height="188"><div class="name">Remigius of Auxerre</div><div class="dates">c. 841 – 908</div><figcaption>Grammar and her students, from a Martianus with part of his commentary. 10th century</figcaption></figure>
+      <div class="gloss"><p>A schoolmaster who compiled commentaries on some twenty texts. For three centuries, readers met Martianus with Remigius's notes in the margin.</p></div>
+    </div>
+
+    <div class="mind">
+      <figure><img src="img/hugh.jpg" alt="Hugh, labeled Magister Hugo, seated and writing in a book on a lectern" width="150" height="188"><div class="name">Hugh of St Victor</div><div class="dates">c. 1096 – 1141</div><figcaption>"Magister Hugo," writing the Didascalicon. Leiden, Vulcanius 45</figcaption></figure>
+      <div class="gloss"><p>Rebuilt the map of knowledge in the <i>Didascalicon</i>, adding mechanical arts beside the liberal ones.</p></div>
+    </div>
+
+    <div class="mind">
+      <figure><img src="img/herrad.jpg" alt="Herrad in a red veil holding a scroll" width="150" height="188"><div class="name">Herrad of Landsberg</div><div class="dates">c. 1130 – 1195</div><figcaption>Self-portrait, Hortus deliciarum. The original burned in 1870; known from copies</figcaption></figure>
+      <div class="gloss"><p>An abbess who compiled the <i>Hortus deliciarum</i> for her nuns, including a famous drawing of Philosophy enthroned among the seven arts.</p></div>
+    </div>
+
+    <div class="mind">
+      <figure><img src="img/alan.jpg" alt="Alan, labeled Magister Alanus, in a blue robe, raising a finger as he speaks" width="150" height="188"><div class="name">Alan of Lille</div><div class="dates">c. 1128 – 1203</div><figcaption>&ldquo;Magister Alanus&rdquo; in debate with Peter the Chanter. 13th century</figcaption></figure>
+      <div class="gloss"><p>A Paris master called the universal doctor. In his poem <i>Anticlaudianus</i>, the seven arts build a chariot to carry Prudence up to heaven.</p></div>
+    </div>
+
   </div>
 </section>
 
 <section aria-labelledby="works-h">
-  <h2 id="works-h">Works</h2>
+  <div class="rule" aria-hidden="true"></div>
+  <h2 id="works-h"><span class="latin">De operibus</span>Works</h2>
   <div class="works">
     <div class="work">
       <span class="pill live">Live</span>
       <h3>Etymologiae, reimagined</h3>
       <p>All twenty books of Isidore recast as verse chapters by guilds of AI models. A reimagining, not a translation.</p>
-      <p><a href="https://spinchange.com/etymologiae/">Read the Etymologiae</a></p>
+      <p><a class="hand" href="https://spinchange.com/etymologiae/">Read the Etymologiae</a></p>
     </div>
     <div class="work">
       <span class="pill soon">In progress</span>
@@ -94,7 +202,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);font-fa
     <div class="work">
       <span class="pill soon">Planned</span>
       <h3>Wisdom's House</h3>
-      <p>A concordance of the seven liberal arts: how each art was defined and taught from Martianus to Hugh of St Victor, sentence by sentence, with what each writer kept, cut or changed.</p>
+      <p>A concordance of the seven liberal arts: how each art was defined and taught from Martianus to Hugh of St Victor, sentence by sentence.</p>
     </div>
     <div class="work">
       <span class="pill soon">Planned</span>
@@ -104,8 +212,28 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);font-fa
   </div>
 </section>
 
+<section aria-labelledby="credits-h">
+  <h3 id="credits-h"><span class="latin">De imaginibus</span>Images</h3>
+  <div class="credits">
+    <p>All images are medieval manuscript illuminations in the public domain, cropped from photographs on Wikimedia Commons:
+      <a href="https://commons.wikimedia.org/wiki/File:Rome,_Lateran,_Capella_Sancta_Sanctorum,_Fresco_of_Augustine_(cropped).jpg">Augustine</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Martianus_Capella,_Musica.jpg">Martianus</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:De_consolatione_philosophiae-UBU_Hs._1335-f.178bis_v-Philosophia_in_discussie_met_Boethius_die_weer_gezond_is.jpg">Boethius</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Flavius_Magnus_Aurelius_Cassiodorus_(cropped).jpg">Cassiodorus</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Isidore_de_S%C3%A9ville_Corbie_(800)_BnF_Lat_13_396.jpg">Isidore</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:BL_Yates_Thompson_MS_26_f.2r_(cropped_centre).png">Bede</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Raban-Maur_Alcuin_Otgar.jpg">Alcuin and Rabanus</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Johannes_Scottus_Eriugena.jpg">Eriugena</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Martianus_Capella_grammaire_2.jpg">Remigius</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Hugo_von_St._Victor,_Didascalicon.jpg">Hugh</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Herrad_von_landsberg.jpg">Herrad</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:Debatte_zwischen_Alain_de_Lille_und_Petrus_Cantor.jpg">Alan</a></p>
+  </div>
+</section>
+
 <footer>
-  <span>Translations and texts on this site are made with AI models (Claude and others) under human direction, and are labeled as such.</span>
+  <span class="explicit">Explicit</span>
+  <span>Chosen, steered and edited by the site's editor. Drafting and translation are done with AI models, including Claude.</span>
   <span>Part of <a href="https://spinchange.com/">spinchange.com</a>.</span>
 </footer>
 
