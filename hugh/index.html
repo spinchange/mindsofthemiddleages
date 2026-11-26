@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Didascalicon · Minds of the Middle Ages</title>
+<meta name="description" content="Jerome Taylor's 1961 English translation of Hugh of St Victor's Didascalicon, with his introduction and notes, as a new ebook. Free: EPUB, Kobo and Kindle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=IM+Fell+DW+Pica+SC&family=IM+Fell+Great+Primer+SC&display=swap" rel="stylesheet">
+<style>
+/* Layout: a centered leaf of a university manuscript. Aged parchment, red ruling, blackletter rubrics, Fell-type body, red-and-blue lombard initials. One visual world, single theme by choice. */
+:root{
+  --vellum:#e8d9b5;
+  --ink:#3a2817;          /* iron-gall brown */
+  --faded:#6e5636;
+  --rubric:#9e2a17;       /* vermilion */
+  --lapis:#1f3f7a;        /* ultramarine */
+  --gilt:#a8843c;
+  --ruling:rgba(158,42,23,.28);
+  --display:"UnifrakturMaguntia","Old English Text MT",serif;   /* initial letter and Explicit only */
+  --heading:"IM Fell Great Primer SC","IM Fell English SC",Garamond,Georgia,serif;
+  --body:"IM Fell English",Garamond,Georgia,serif;
+  --caps:"IM Fell English SC","IM Fell DW Pica SC",Garamond,Georgia,serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{background:#2b2015}
+body{
+  margin:0;color:var(--ink);font-family:var(--body);font-size:1.12rem;line-height:1.62;text-align:center;
+  background-color:var(--vellum);
+  background-image:
+    radial-gradient(ellipse at 50% 40%, rgba(255,248,225,.55) 0%, rgba(255,248,225,0) 60%),
+    radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 55%, rgba(92,58,22,.42) 100%),
+    radial-gradient(circle at 12% 18%, rgba(140,96,40,.16) 0 6%, transparent 9%),
+    radial-gradient(circle at 86% 64%, rgba(140,96,40,.13) 0 5%, transparent 8%),
+    radial-gradient(circle at 70% 8%, rgba(140,96,40,.10) 0 3%, transparent 5%),
+    radial-gradient(circle at 22% 82%, rgba(120,80,30,.12) 0 4%, transparent 7%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .24  0 0 0 0 .1  0 0 0 .22 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment:fixed,fixed,scroll,scroll,scroll,scroll,scroll;
+}
+a{color:var(--lapis);text-decoration-color:rgba(31,63,122,.45);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--rubric);outline-offset:2px}
+.wrap{
+  max-width:960px;margin:0 auto;padding:0 56px 72px;position:relative;
+  background:
+    linear-gradient(var(--ruling),var(--ruling)) 28px 0/1px 100% no-repeat,
+    linear-gradient(var(--ruling),var(--ruling)) 34px 0/1px 100% no-repeat,
+    linear-gradient(var(--ruling),var(--ruling)) calc(100% - 28px) 0/1px 100% no-repeat,
+    linear-gradient(var(--ruling),var(--ruling)) calc(100% - 34px) 0/1px 100% no-repeat;
+}
+@media (max-width:640px){.wrap{padding:0 22px 56px;background:none}}
+header{padding:64px 0 28px;display:grid;gap:14px;justify-items:center}
+.kicker{font-family:var(--caps);font-size:1rem;letter-spacing:.12em;color:var(--rubric)}
+h1,h2,h3{font-weight:400;line-height:1.1;margin:0;text-wrap:balance}
+h1{font-family:var(--heading);font-size:clamp(2.4rem,6.4vw,4.1rem);letter-spacing:.02em;color:var(--rubric);text-shadow:0 1px 0 rgba(255,240,210,.5)}
+h2{font-family:var(--heading);font-size:2.05rem;letter-spacing:.02em;color:var(--rubric)}
+h3{font-family:var(--caps);font-size:1.3rem;color:var(--lapis);letter-spacing:.03em}
+.latin{display:block;font-family:var(--caps);font-size:.95rem;letter-spacing:.14em;color:var(--faded);margin-bottom:4px}
+p{margin:0 auto;max-width:60ch}
+.lede{font-size:1.2rem;text-align:left;max-width:56ch}
+.lede::first-letter{
+  float:left;font-family:var(--display);font-size:4.4rem;line-height:.8;padding:8px 10px 4px 8px;margin:4px 12px 0 0;
+  color:var(--lapis);border:1.5px solid var(--rubric);outline:1px solid var(--rubric);outline-offset:3px;background:rgba(255,246,220,.45)
+}
+.fleuron{color:var(--rubric);font-size:1.4rem;letter-spacing:.6em;padding-left:.6em}
+section{padding:44px 0 0;display:grid;gap:18px;justify-items:center}
+section > *{width:100%}
+.rule{height:9px;max-width:520px;margin:0 auto;border-top:1px solid var(--rubric);border-bottom:1px solid var(--rubric);opacity:.55}
+
+.works{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.work{
+  padding:20px 18px;display:grid;gap:8px;align-content:start;justify-items:center;
+  border:1px solid rgba(110,86,54,.45);outline:1px solid rgba(110,86,54,.25);outline-offset:-6px;
+  background:rgba(255,246,220,.28)
+}
+.pill{font-family:var(--caps);font-size:.9rem;letter-spacing:.1em}
+.pill::before,.pill::after{content:" ❦ ";font-size:.8em}
+.pill.live{color:var(--lapis)}
+.pill.soon{color:var(--rubric)}
+.credits{font-size:.95rem;color:var(--faded);display:grid;gap:4px}
+.credits p{max-width:80ch}
+footer{margin-top:56px;padding-top:18px;font-size:.98rem;color:var(--faded);display:grid;gap:6px}
+footer .explicit{font-family:var(--display);font-size:1.7rem;color:var(--rubric)}
+.downloads{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.dl{font-family:var(--caps);font-size:1.25rem;letter-spacing:.03em}
+.size{font-style:italic;font-size:.92rem;color:var(--faded)}
+.prose{display:grid;gap:14px;text-align:left}
+.prose p{max-width:62ch}
+.back{font-family:var(--caps);letter-spacing:.08em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Hugh of St Victor · Didascalicon de studio legendi</div>
+  <h1>The Didascalicon</h1>
+  <div class="fleuron" aria-hidden="true">❧ ❧ ❧</div>
+  <p class="lede">Hugh's guide to reading, written at Paris in the 1120s: what to read, in what order and how, from the seven liberal arts and the mechanical arts to Scripture. This is Jerome Taylor's translation of 1961, with his introduction and notes, made into a new ebook.</p>
+</header>
+
+<section aria-labelledby="dl-h">
+  <div class="rule" aria-hidden="true"></div>
+  <h2 id="dl-h"><span class="latin">Libri</span>Download</h2>
+  <div class="downloads">
+    <div class="work">
+      <a class="dl" href="hugh-didascalicon.epub" download>EPUB</a>
+      <p>Apple Books, Google Play Books and most readers. Also the file to use with Send to Kindle.</p>
+      <span class="size">1.8 MB</span>
+    </div>
+    <div class="work">
+      <a class="dl" href="hugh-didascalicon.kepub.epub" download>Kobo</a>
+      <p>KEPUB, for Kobo e-readers. Copy it onto the device over USB.</p>
+      <span class="size">1.8 MB</span>
+    </div>
+    <div class="work">
+      <a class="dl" href="hugh-didascalicon.azw3" download>Kindle</a>
+      <p>AZW3, for copying onto a Kindle over USB.</p>
+      <span class="size">2.1 MB</span>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="about-h">
+  <div class="rule" aria-hidden="true"></div>
+  <h2 id="about-h"><span class="latin">De hac editione</span>About this edition</h2>
+  <div class="prose">
+    <p>Jerome Taylor, <i>The Didascalicon of Hugh of St. Victor: A Medieval Guide to the Arts</i> (New York: Columbia University Press, 1961; Records of Civilization 64). The ebook is made from the University of Florida's copy, scanned for the Internet Archive. The text was proofread against the page images, the notes are linked to the text and back, and the index is linked to the notes. The printed page numbers are kept as page markers.</p>
+    <p>This edition was prepared with AI assistance (Claude, by Anthropic). The translation, introduction and notes are Taylor's, unaltered.</p>
+    <p>Taylor's translation was published in the United States in 1961 and its copyright was not renewed, so it is in the public domain in the United States. It may still be in copyright in other countries; check before downloading outside the US.</p>
+  </div>
+</section>
+
+<footer>
+  <span class="explicit">Explicit</span>
+  <a class="back" href="../">Minds of the Middle Ages</a>
+  <span>Created by Chris Duffy with Claude Code</span>
+</footer>
+
+</div>
+</body>
+</html>
